@@ -28,7 +28,7 @@ export class HttpClientService {
   adminRegistration(data: AdminUserModel) {
     // const postData = new FormData();
     // postData.append('name', data.name);
-    // postData.append('emailId', data.emailId);
+    // postData.append('emailId', data.emailId);3
     // postData.append('password', data.password);
     // postData.append('role', data.role);
     // postData.append('image', data.image, 'admin');
@@ -144,7 +144,8 @@ export class HttpClientService {
         if(ele !== 'image') {
           postData.append(ele, data[ele]);
         } else {
-          postData.append(ele, data[ele], data.title);
+          const blob = new Blob([data[ele]], { type: 'image/png' });
+          postData.append(ele, blob, data.title);
         }
       }
     }
