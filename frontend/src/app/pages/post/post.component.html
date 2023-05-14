@@ -21,7 +21,7 @@
     <div class="posts">
         <h3 style="letter-spacing: 1.5px;">Popular</h3>
         <article class="d-flex flex-column mb-4" *ngFor="let post of postsList$ | async | slice: 0:4" [class.d-none]="post.id === postID" style="cursor: pointer;">
-            <img class="mb-2 align-middle" [src]="post.image" [alt]="post.title" height="150" [routerLink]="['/post', post.id]">
+            <img class="mb-2 align-middle" [src]="post.image" [alt]="post.title" height="150" [routerLink]="['https://thechoicebox.netlify.app/post', post.id]">
             <h3 class="fw-bold fs-5 my-1" [routerLink]="['/post', post.id]" style="letter-spacing: 1px;">{{ post.title }}
             </h3>
             <div class="d-flex align-items-center">

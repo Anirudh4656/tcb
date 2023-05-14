@@ -7,7 +7,7 @@
       <div class="mb-3" style="height: auto;"></div>
       <h5 class="post-heading">TRENDING ON THECHOICEBOX</h5>
       <article class="d-flex flex-direction mb-5" *ngFor="let post of postsList | slice: 0:6" style="cursor: pointer;">
-        <img class="me-3 align-middle image" [src]="post.image" [alt]="post.title" [routerLink]="['/post', post.id]">
+        <img class="me-3 align-middle image" [src]="post.image" [alt]="post.title" [routerLink]="['https://thechoicebox.netlify.app/post', post.id]">
         <div class="d-flex flex-column mt-2">
           <h3 class="fw-bold fs-5" [routerLink]="['/post', post.id]" style="letter-spacing: 1px;">{{ post.title }}
           </h3>
@@ -25,7 +25,7 @@
       </article>
       <h5 class="post-heading">POPULAR BLOGS</h5>
       <article class="d-flex flex-direction mb-5" *ngFor="let post of postsList | slice: 9" style="cursor: pointer;">
-        <img class="me-3 align-middle image" [src]="post.image" [alt]="post.title" [routerLink]="['/post', post.id]">
+        <img class="me-3 align-middle image" [src]="post.image" [alt]="post.title" [routerLink]="['https://thechoicebox.netlify.app/post', post.id]">
         <div class="d-flex flex-column mt-2">
           <h3 class="fw-bold fs-5" [routerLink]="['/post', post.id]" style="letter-spacing: 1px;">{{ post.title }}
           </h3>
@@ -46,7 +46,7 @@
       <div *ngIf="(categoryList$ | async)?.length">
         <h5 class="post-heading">RECOMMENDED CATEGORIES</h5>
         <div class="d-flex flex-row flex-wrap">
-          <div class="text-center p-2 me-2 mb-2 chips" [routerLink]="['/category', category.category]"
+          <div class="text-center p-2 me-2 mb-2 chips" [routerLink]="['https://thechoicebox.netlify.app/category', category.category]"
             *ngFor="let category of categoryList$ | async">
             {{ category.category }}</div>
         </div>
@@ -57,7 +57,7 @@
           style="cursor: pointer;">
           <img class="mb-2 align-middle w-100" [src]="post.image" [alt]="post.title" height="150"
             [routerLink]="['/post', post.id]">
-          <h3 class="fw-bold fs-5 m-0" [routerLink]="['/post', post.id]" style="letter-spacing: 1px;">{{ post.title }}
+          <h3 class="fw-bold fs-5 m-0" [routerLink]="['https://thechoicebox.netlify.app/post', post.id]" style="letter-spacing: 1px;">{{ post.title }}
           </h3>
           <div class="d-flex align-items-center">
             <span class="text-nowrap">{{ post.author }}</span>
