@@ -4,6 +4,7 @@ const express = require('express'), bodyParser = require('body-parser'),
     admin = require('./controller/admin.controller'),
     category = require('./controller/category.controller'),
     postType = require('./controller/post-type.controller'),
+    get = require('./controller/post-type.controller'),
     posts = require('./controller/posts.controller'),
     subCategory = require('./controller/sub-category.controller'),
     typeCategory = require('./controller/type-category.controller'),
@@ -30,7 +31,8 @@ app.use(`${ADMIN_URL}/adminDetails`, admin);
 app.use(`${ADMIN_URL}/category`, category);
 app.use(`${ADMIN_URL}/sub_category`, subCategory);
 app.use(`${ADMIN_URL}/type_category`, typeCategory);
-app.use(`${ADMIN_URL}/post_type`, postType);
+app.use(`${ADMIN_URL}/post_type` , postType);
+app.use(`${ADMIN_URL}`, get);
 
 // Public Routes
 app.use(`${PUBLIC_URL}/posts`, posts);

@@ -11,6 +11,10 @@ router.post('/create', async (req, res) => {
     }
 });
 
+router.get('/get', async (req, res) => {
+  
+        res.status(ERROR_TYPES.DATA_FOUND.code).send({ success: true, message: "working fine" });
+});
 router.get('/getAll', async (req, res) => {
     try {
         res.status(ERROR_TYPES.DATA_FOUND.code).send({ success: true, data: await db.post_type.findAll(), message: ERROR_TYPES.DATA_FOUND.message, status: ERROR_TYPES.DATA_FOUND.status });
